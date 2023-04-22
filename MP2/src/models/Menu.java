@@ -2,10 +2,7 @@ package models;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Currency;
-import java.util.List;
+import java.util.*;
 
 // Composition
 public class Menu {
@@ -17,7 +14,8 @@ public class Menu {
     }
 
     public MenuItem createMenuItem(String name, BigDecimal price, Collection<Recipe> recipes) {
-        var menuItem = new MenuItem(name, price, recipes);
+        var menuItem = new MenuItem(name, price);
+        recipes.forEach(menuItem::addRecipeQualified);
         this.items.add(menuItem);
         return menuItem;
     }
@@ -32,23 +30,42 @@ public class Menu {
     }
 
     public class MenuItem {
-        public static NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
-        private String name;
-        private BigDecimal price;
+        public static final NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
+        private final String name;
+        private final BigDecimal price;
 
         // No need for a reference to Menu - accessible by Menu.this
+
+        // Qualified association
+        private final Map<String, Recipe> recipesQualified = new HashMap<>();
 
         // One item might consist of several elements which have individual recipes,
         // e.g. menu item is "Lunch set #3": baked potatoes + smoked salmon + roasted asparagus.
         // Business case: client orders "Lunch set #3" and the chef needs all the recipes needed to prepare it.
         // Name of the recipe is the qualifier in this case.
-        List<Recipe> recipeList = new ArrayList<>();
+
+        public void addRecipeQualified(Recipe recipe) {
+            if (!recipesQualified.containsKey(recipe.getName())) {
+                recipesQualified.put(recipe.getName(), recipe);
+                recipe.addMenuItem(this);
+            }
+        }
+
+        public Recipe findRecipeQualified(String recipeName) throws Exception {
+            if (!recipesQualified.containsKey(recipeName)) {
+                throw new Exception("Unable to find recipe \"" + recipeName + "\"");
+            }
+            return recipesQualified.get(recipeName);
+        }
+
+        public List<Recipe> getRecipes() {
+            return new ArrayList<>(recipesQualified.values());
+        }
 
         // Any reason to not make this private? @mtrzaska
-        public MenuItem(String name, BigDecimal price, Collection<Recipe> recipes) {
+        public MenuItem(String name, BigDecimal price) {
             this.name = name;
             this.price = price;
-            recipeList.addAll(recipes);
         }
 
         public Menu getMenu() {

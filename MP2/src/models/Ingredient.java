@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Ingredient {
-    private String name;
-    List<RecipeIngredient> recipeList = new ArrayList<>();
+    private final String name;
+    final List<RecipeIngredient> recipes = new ArrayList<>();
 
     public Ingredient(String name) {
         this.name = name;
@@ -18,16 +18,16 @@ public class Ingredient {
     }
 
     public void removeRecipe(Recipe recipe) {
-        var recipeIngredient = this.recipeList.stream().filter(ri -> ri.recipe == recipe).findFirst();
+        var recipeIngredient = this.recipes.stream().filter(ri -> ri.recipe == recipe).findFirst();
 
         if (recipeIngredient.isEmpty()) return;
 
-        this.recipeList.remove(recipeIngredient.get());
-        recipe.ingredientList.remove(recipeIngredient.get());
+        this.recipes.remove(recipeIngredient.get());
+        recipe.ingredients.remove(recipeIngredient.get());
     }
 
-    public Iterable<Recipe> getRecipeList() {
-        return recipeList
+    public Iterable<Recipe> getRecipes() {
+        return recipes
                 .stream()
                 .map(recipeIngredient -> recipeIngredient.recipe)
                 .toList();

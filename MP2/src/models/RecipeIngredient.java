@@ -15,12 +15,12 @@ public class RecipeIngredient {
         this.amount = amount;
         this.unit = unit;
 
-        recipe.ingredientList.add(this);
-        ingredient.recipeList.add(this);
+        recipe.ingredients.add(this);
+        ingredient.recipes.add(this);
     }
 
     @Override
     public String toString() {
-        return ingredient + " " + amount + " " + unit;
+        return ingredient + " " + amount + (unit != null ? " " + unit : "");
     }
 }

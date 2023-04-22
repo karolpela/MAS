@@ -1,3 +1,4 @@
+import models.Equipment;
 import models.Ingredient;
 import models.Menu;
 import models.Recipe;
@@ -28,23 +29,60 @@ public class Main {
         lemonade.addIngredient(iceCube, 3, null);
         lemonade.addIngredient(sugar, 1, "teaspoon");
 
+
+        var bigPot = new Equipment("Big pot");
+        var fryingPan = new Equipment("Frying pan");
+        spaghettiBolognese.addEquipment(bigPot);
+        spaghettiBolognese.addEquipment(fryingPan);
+
+        var glass = new Equipment("Big glass");
+        var straw = new Equipment("Straw");
+        glass.addRecipe(lemonade);
+        straw.addRecipe(lemonade);
+
+
         var menu = new Menu("Lunch menu");
-        menu.createMenuItem("Lunch set #1",
+        var menuItem1 = menu.createMenuItem("Lunch set #1",
                 BigDecimal.valueOf(10.99),
                 List.of(spaghettiBolognese, lemonade));
 
+        System.out.println("\n-> Menu (composition):");
+        System.out.println(menu);
+        System.out.println("Items:" + menu.getItems());
 
-        System.out.println("Menu:");
-        System.out.println("\t" + menu);
-        System.out.println("\tItems:" + menu.getItems());
+        System.out.println("\n-> Recipe, Ingredient (many-to-many with attributes):");
+        System.out.println(spaghettiBolognese + ", ingredients:" + spaghettiBolognese.getIngredients());
+        System.out.println(beef + ", recipes:" + beef.getRecipes());
 
-        System.out.println("Recipe, Ingredient:");
-        System.out.println("\t" + spaghettiBolognese + " - Ingredients:" + spaghettiBolognese.getIngredientList());
-        System.out.println("\t" + beef + " - Recipes:" + beef.getRecipeList());
-
-        System.out.println("Remove beef from spaghetti bolognese:");
+        System.out.println("\n-> Remove beef from spaghetti bolognese:");
         spaghettiBolognese.removeIngredient(beef);
-        System.out.println("\t" + spaghettiBolognese + " - Ingredients:" + spaghettiBolognese.getIngredientList());
-        System.out.println("\t" + beef + " - Recipes:" + beef.getRecipeList());
+        System.out.println(spaghettiBolognese + ", ingredients:" + spaghettiBolognese.getIngredients());
+        System.out.println(beef + ", recipes:" + beef.getRecipes());
+
+        System.out.println("\n-> MenuItem, Recipe (qualified):");
+        System.out.println(menuItem1);
+        System.out.println("Recipes:" + menuItem1.getRecipes());
+        try {
+            var find1 = menuItem1.findRecipeQualified("Lemonade");
+            System.out.println(find1
+                    + ", time: " + find1.getTotalTime().toMinutes() + " min"
+                    + ", ingredients:" + find1.getIngredients());
+            var find2 = menuItem1.findRecipeQualified("Pancakes");
+            System.out.println(find2
+                    + ", time: " + find2.getTotalTime().toMinutes()
+                    + " min" + ", ingredients:" + find2.getIngredients());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("\n-> Equipment, Recipe (many-to-many regular):");
+        System.out.println(spaghettiBolognese + ", equipment: " + spaghettiBolognese.getEquipment());
+        System.out.println(lemonade + ", equipment: " + lemonade.getEquipment());
+        System.out.println(straw + ", recipes: " + straw.getRecipes());
+
+        System.out.println("\n-> Remove straw from lemonade:");
+        lemonade.removeEquipment(straw);
+        System.out.println(lemonade + ", equipment: " + lemonade.getEquipment());
+        System.out.println(straw + ", recipes: " + straw.getRecipes());
     }
 }
