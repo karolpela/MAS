@@ -1,3 +1,4 @@
+import interfaces.Sailable;
 import models.dynamic.RentalSpace;
 import models.multiaspect.DigitalRecord;
 import models.multiaspect.Record;
@@ -7,26 +8,20 @@ import models.multiple.*;
 import models.overlapping.Building;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        var requirements = """
-                • Overlapping
-                • Wielodziedziczenie
-                • Wieloaspektowe
-                • Dynamiczne
-                """;
-
-
         System.out.println("\n>>> Multiple inheritance");
         var car = new Car(4, 200.0, 4000.0, 0.0, 0.0, 4);
         var boat = new Boat(2, 300.0, 7000.0, 0.0, 0.0, 3);
         var amphibian = new Amphibian(6, 400, 10000.0, 0.0, 0.0, 4, 4);
         var destinationWater = new Destination("Harbor", 100.0, 100.0, DestinationType.Water);
         var destinationGround = new Destination("Hangar", -100.0, -100.0, DestinationType.Ground);
+
+        var sailables = List.of(boat, amphibian);
+        var cars = List.of(car, amphibian);
 
         try {
             System.out.println("> Car:");
@@ -39,6 +34,17 @@ public class Main {
             amphibian.sailTo(destinationWater);
             System.out.println("> Attempt to drive the car to a water destination");
             car.driveTo(destinationWater);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("> Demonstrate polymorphism");
+        try {
+            for (Sailable s : sailables) {
+                s.sailTo(destinationWater);
+            }
+            for (Car c : cars) {
+                c.driveTo(destinationGround);
+            }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

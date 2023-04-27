@@ -19,6 +19,12 @@ public class Building {
         this.floorCount = floorCount;
     }
 
+    // Methods are used to create instances due to the enum being contained
+    // in the same .java file, which makes it inaccessible from the outside,
+    // and also to avoid ambiguity between constructors.
+    // This also gives more control as you can't add a new value to the enum
+    // and try to pass it in a constructor.
+
     public static Building createCommercial(int floorCount, int workerCount) {
         var building = new Building(floorCount);
         building.typeSet.add(buildingType.Residential);

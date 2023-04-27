@@ -1,7 +1,6 @@
 package interfaces;
 
 import models.multiple.Destination;
-import models.multiple.DestinationType;
 
 public interface Sailable {
     int getTurbineCount();
