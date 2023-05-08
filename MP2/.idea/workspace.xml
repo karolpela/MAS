@@ -7,7 +7,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20f22fd2-9a20-4a0a-9dcd-c27c89246948" name="Changes" comment="Finish MP2" />
+    <list default="true" id="20f22fd2-9a20-4a0a-9dcd-c27c89246948" name="Changes" comment="Finish MP2">
+      <change afterPath="$PROJECT_DIR$/../MP4/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MP4/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MP4/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MP4/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MP4/.idea/prettier.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MP4/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MP4/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MP4/MP4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MP4/src/bag/Olympics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MP4/src/bag/Performance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MP4/src/bag/Sportsman.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MP4/src/ordered/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MP4/src/ordered/Bookshelf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MP4/src/subset/Businessman.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MP4/src/subset/Company.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MP4/src/unique/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,28 +52,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.CommitDialog&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -81,6 +99,8 @@
       <workItem from="1681982248391" duration="116000" />
       <workItem from="1681983415216" duration="1437000" />
       <workItem from="1682170814091" duration="106000" />
+      <workItem from="1683561938834" duration="11000" />
+      <workItem from="1683571354132" duration="728000" />
     </task>
     <task id="LOCAL-00001" summary="Implement many-to-many with attribute and composition">
       <created>1681477274684</created>
