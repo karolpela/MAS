@@ -4,15 +4,15 @@ package bag;
 // Many-to-many with attributes
 public class Performance {
     Olympics olympics;
-    Sportsman sportsman;
+    Sportsperson sportsman;
     private String competitionName;
     private int place;
 
-    public Performance(Olympics olympics, Sportsman sportsman, int amount,
+    public Performance(Olympics olympics, Sportsperson sportsman, int place,
             String competitionName) {
         this.olympics = olympics;
         this.sportsman = sportsman;
-        this.place = amount;
+        this.place = place;
         this.competitionName = competitionName;
 
         olympics.performances.add(this);

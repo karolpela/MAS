@@ -8,23 +8,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20f22fd2-9a20-4a0a-9dcd-c27c89246948" name="Changes" comment="Finish MP2">
-      <change afterPath="$PROJECT_DIR$/../MP4/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MP4/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MP4/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MP4/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MP4/.idea/prettier.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MP4/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MP4/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MP4/MP4.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MP4/src/bag/Olympics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MP4/src/bag/Performance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MP4/src/bag/Sportsman.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MP4/src/ordered/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MP4/src/ordered/Bookshelf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MP4/src/subset/Businessman.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MP4/src/subset/Company.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MP4/src/unique/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MP4/src/attribute/AirConditioner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MP4/src/own/Planner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MP4/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MP4/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MP4/src/bag/Olympics.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MP4/src/bag/Olympics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MP4/src/bag/Performance.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MP4/src/bag/Performance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MP4/src/bag/Sportsman.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MP4/src/bag/Sportsperson.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +90,9 @@
       <workItem from="1681983415216" duration="1437000" />
       <workItem from="1682170814091" duration="106000" />
       <workItem from="1683561938834" duration="11000" />
-      <workItem from="1683571354132" duration="728000" />
+      <workItem from="1683571354132" duration="740000" />
+      <workItem from="1683656501003" duration="597000" />
+      <workItem from="1683736274782" duration="602000" />
     </task>
     <task id="LOCAL-00001" summary="Implement many-to-many with attribute and composition">
       <created>1681477274684</created>
