@@ -2,9 +2,11 @@ import attribute.AirConditioner;
 import bag.Olympics;
 import bag.Performance;
 import bag.Sportsperson;
+
 import java.time.LocalDateTime;
 import java.time.Year;
 import java.util.ArrayList;
+
 import ordered.Book;
 import ordered.Bookshelf;
 import own.Planner;
@@ -30,8 +32,14 @@ public class Main {
         System.out.println("\n>> {subset} - Companies and stakeholders");
         var company = new Company("MAS Industries");
         var businessman = new Businessman("Smith");
+        System.out.println("> Try to make the businessman a chairperson");
         businessman.makeChairperson(company);
+        System.out.println("> Make the businessman a stakeholder");
         businessman.makeStakeholder(company);
+        System.out.println(
+                "Company - stakeholders: " + company.getStakeholders()
+                        + ", chairpersons: " + company.getChairpersons());
+        System.out.println("> Try to make the businessman a chairperson again");
         businessman.makeChairperson(company);
         System.out.println(
                 "Company - stakeholders: " + company.getStakeholders()
