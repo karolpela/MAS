@@ -47,4 +47,14 @@ public class Invoice {
     public void setTotal(BigDecimal total) {
         this.total = total;
     }
+
+    @Override
+    public String toString() {
+        return "Invoice{" +
+                "date=" + date +
+                ", total=" + total +
+                '}';
+    }
+
+
 }

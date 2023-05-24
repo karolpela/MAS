@@ -1,12 +1,12 @@
 package pl.edu.pjwstk.s20265.mas.mp5.Inheritance;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import jakarta.persistence.*;
 
 @Entity
 public class DigitalRecord extends Record {
-    public enum DigitalRecordType {CD, DVD}
+    @Id
+    @GeneratedValue
+    private Long id;
 
     @Enumerated(EnumType.STRING)
     private DigitalRecordType recordType;
@@ -19,10 +19,22 @@ public class DigitalRecord extends Record {
         this.recordType = recordType;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "DigitalRecord{" +
                 "recordType=" + recordType +
-                "} " + super.toString();
+                ", title='" + title + '\'' +
+                ", artist='" + artist + '\'' +
+                "} ";
     }
+
+    public enum DigitalRecordType {CD, DVD}
 }

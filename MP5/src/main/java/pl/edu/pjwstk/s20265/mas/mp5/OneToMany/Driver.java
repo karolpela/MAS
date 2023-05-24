@@ -1,6 +1,9 @@
 package pl.edu.pjwstk.s20265.mas.mp5.OneToMany;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -33,7 +36,13 @@ public class Driver {
     }
 
     public void removeCar(Car car) {
-        this.cars.remove(car);
+        if (this.cars.remove(car)) {
+            car.setDriver(null);
+        }
+    }
+
+    public Set<Car> getCars() {
+        return cars;
     }
 
     public Long getId() {
@@ -47,8 +56,7 @@ public class Driver {
     @Override
     public String toString() {
         return "Driver{" +
-                "cars=" + cars +
-                ", firstName='" + firstName + '\'' +
+                "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';
     }

@@ -1,6 +1,9 @@
 package pl.edu.pjwstk.s20265.mas.mp5.OneToMany;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 import java.time.Year;
 
@@ -65,9 +68,6 @@ public class Car {
 
     public void setDriver(Driver driver) {
         this.driver = driver;
-        if (driver == null) {
-            return;
-        }
         if (!driver.cars.contains(this)) {
             driver.addCar(this);
         }
